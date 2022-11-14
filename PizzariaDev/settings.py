@@ -3,6 +3,8 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
+
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -16,7 +18,7 @@ SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*.herokuapp.com','localhost','127.0.0.1']
 
 
 # Application definition
@@ -30,6 +32,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'django_bootstrap_icons',
+    'app_pizzariaDev',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +124,5 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://pizzariadev.herokuapp.com','http://pizzariadev.herokuapp.com'];
