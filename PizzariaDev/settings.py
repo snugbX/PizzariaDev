@@ -14,12 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m'
+#SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['.herokuapp.com','localhost','127.0.0.1','pizzariadev.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','pizzariadev.herokuapp.com']
 
 
 # Application definition
@@ -51,7 +52,9 @@ ROOT_URLCONF = 'PizzariaDev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates"
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

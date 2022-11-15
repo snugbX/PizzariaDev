@@ -1,7 +1,6 @@
 from app_pizzariaDev.models import *
 from app_pizzariaDev.constantes import ESTADOS
 
-
 class Endereco(models.Model):
 	logradouro = models.CharField(max_length=255, null=True)
 	numero = models.CharField(max_length=255, null=True)
@@ -10,4 +9,4 @@ class Endereco(models.Model):
 	estado = models.CharField(max_length=255, choices=ESTADOS)
 
 	def __str__(self):
-		return self.cep
+		return self.logradouro

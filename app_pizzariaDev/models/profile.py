@@ -11,7 +11,4 @@ class Profile(models.Model):
 	role = models.IntegerField(choices=ROLE_CHOICE, default=2)
 
 	id_endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE, null=False, blank=False)
-
-
-	def __str__(self):
-		return self.user
+	

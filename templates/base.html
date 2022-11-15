@@ -1,0 +1,77 @@
+{% load static %}
+{% load bootstrap5 %}
+{% load bootstrap_icons %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="{% static "img/bg_1.png" %}">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+	<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+	<title>Pizzaria Dev</title>
+</head>
+<body>
+	{% bootstrap_css %}
+
+	<div class="container">
+		<div class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <header class="masthead mb-auto">
+                <div class="inner">
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+                        <a href="" class="navbar-brand p-0">
+                            <h1 class="text-primary m-0"><i class="fa me-3"><img src="{% static "img/pizza.png" %}"></i>PizzariaDev</h1>
+                            <!-- <img src="img/logo.png" alt="Logo"> -->
+                        </a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                            <span class="fa fa-bars"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarCollapse">
+                            <div class="navbar-nav ms-auto py-0 pe-4">
+                                <a href="index.html" class="nav-item nav-link active">Home</a>
+                                <a href="#" class="nav-item nav-link"><i class="fab">{% bs_icon 'cart' %}</i
+                              > Carrinho</a>
+                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+           	{% block content %}
+
+           	{% endblock content %}
+            <main class="inner cover">
+                <footer class="bg-dark text-center text-white">
+                    <!-- Grid container -->
+                    <div class="container p-4 pb-0">
+                        <!-- Section: Social media -->
+                        <section class="mb-4">
+                              <!-- Linkedin -->
+                              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                ><i class="fab">{% bs_icon 'linkedin' %}</i
+                              ></a>
+
+                              <!-- Github -->
+                              <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"
+                                ><i class="fab">{% bs_icon 'github' %}</i
+                              ></a>
+                        </section>
+                        <!-- Section: Social media -->
+                    </div>
+                    <!-- Grid container -->
+                    <!-- Copyright -->
+                    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                        © 2022 Copyright:
+                        <a class="text-white" href="https://mdbootstrap.com/">SKL Developer</a>
+                    </div>
+                    <!-- Copyright -->
+                </footer>
+            </main>
+        </div>
+	</div>
+</body>
+</html>
