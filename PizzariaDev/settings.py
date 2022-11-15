@@ -2,6 +2,7 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import django_heroku
 
 
 load_dotenv()
@@ -16,7 +17,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.herokuapp.com','localhost','127.0.0.1','pizzariadev.herokuapp.com']
 
@@ -127,3 +128,9 @@ STATICFILES_DIRS = (
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CSRF_TRUSTED_ORIGINS = ['https://pizzariadev.herokuapp.com','http://pizzariadev.herokuapp.com'];
+
+
+
+django_heroku.settings(locals())
+
+
