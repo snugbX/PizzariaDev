@@ -71,12 +71,12 @@ WSGI_APPLICATION = 'PizzariaDev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv('BdName'),
-        'USER': os.getenv('BdUser'),
-        'PASSWORD': os.getenv('BdPassword'),
-        'HOST': os.getenv('BdHost'),
-        'PORT': os.getenv('BdPort'),
+        'ENGINE': os.getenv('BD_ENGINE'),
+        'NAME': os.getenv('BD_NAME'),
+        'USER': os.getenv('BD_USER'),
+        'PASSWORD': os.getenv('BD_PASSWORD'),
+        'HOST': os.getenv('BD_HOST'),
+        'PORT': os.getenv('BD_PORT'),
     }
 }
 
