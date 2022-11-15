@@ -31,3 +31,22 @@ ROLE_CHOICE = (
 	(1,'Admin'),
 	(2,'Cliente')
 )
+
+STATUS_VENDA = (
+	('F', 'Finalizada'),
+	('C', 'Cancelada'),
+	('E', 'Em Andamento')
+)
+
+STATUS_ENTREGA = (
+	('F', 'Finalizada'),
+	('C', 'Cancelada'),
+	('E', 'Em Andamento'),
+	('P', 'Parada')
+)
+
+FORMA_PAGAMENTO = (
+	('pix','PIX'),
+	('car','Cartao'),
+	('din','Dinheiro')
+)

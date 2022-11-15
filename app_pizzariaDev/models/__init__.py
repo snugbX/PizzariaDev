@@ -10,6 +10,10 @@ from .Endereco import Endereco
 from .Produto import Produto
 from .ItemDeProduto import ItemDeProduto
 from .Profile import Profile
+from .Pedido import Pedido
+from .Venda import Venda
+from .Pagamento import Pagamento
+from .Entrega import Entrega
 
 
 
