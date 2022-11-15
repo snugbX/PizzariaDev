@@ -3,7 +3,6 @@ from app_pizzariaDev.constantes import ESTADOS
 
 
 class Endereco(models.Model):
-
 	logradouro = models.CharField(max_length=255, null=True)
 	numero = models.CharField(max_length=255, null=True)
 	cep = models.CharField(max_length=255, null=True)
