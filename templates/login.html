@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load bootstrap5 %}
+{% load bootstrap_icons %}
+
+{% block content %}
+    <div id="div_Login" class="position-absolute top-50 start-50">
+        <form method="post">
+            {% csrf_token %}
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="fab">{% bs_icon 'Person-circle' %}</i></span>
+                <input type="text" class="form-control" placeholder="Usuario" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="fab">{% bs_icon 'key-fill' %}</i></span>
+                <input type="text" class="form-control" placeholder="Senha" aria-label="Password" aria-describedby="addon-wrapping">
+            </div>
+        </form>
+    </div>
+{% endblock content %}

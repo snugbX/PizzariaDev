@@ -2,7 +2,10 @@
 from pathlib import Path
 from dotenv import load_dotenv
 import os
+import django_heroku
 
+
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -11,12 +14,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m'
+#SECRET_KEY = 'django-insecure-urv#ow$wh)tqx1w3p9-udc-1ixezn)t+b1ek3^8%6#&4z01k=m'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True #False #
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1','pizzariadev.herokuapp.com']
 
 
 # Application definition
@@ -30,6 +34,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bootstrap5',
     'django_bootstrap_icons',
+    'app_pizzariaDev',
+    'contas',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +53,9 @@ ROOT_URLCONF = 'PizzariaDev.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            BASE_DIR / "templates",
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -68,14 +76,15 @@ WSGI_APPLICATION = 'PizzariaDev.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv('BdEngine'),
-        'NAME': os.getenv('BdName'),
-        'USER': os.getenv('BdUser'),
-        'PASSWORD': os.getenv('BdPassword'),
-        'HOST': os.getenv('BdHost'),
-        'PORT': os.getenv('BdPort'),
+        'ENGINE': os.getenv('BD_ENGINE'),
+        'NAME': os.getenv('BD_NAME'),
+        'USER': os.getenv('BD_USER'),
+        'PASSWORD': os.getenv('BD_PASSWORD'),
+        'HOST': os.getenv('BD_HOST'),
+        'PORT': os.getenv('BD_PORT'),
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -121,3 +130,11 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = ['https://pizzariadev.herokuapp.com','http://pizzariadev.herokuapp.com'];
+
+
+
+django_heroku.settings(locals())
+
+
