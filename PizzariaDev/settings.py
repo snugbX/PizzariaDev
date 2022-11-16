@@ -18,7 +18,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True #False #
 
 ALLOWED_HOSTS = ['127.0.0.1','pizzariadev.herokuapp.com']
 
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'django_bootstrap_icons',
     'app_pizzariaDev',
+    'contas',
 ]
 
 MIDDLEWARE = [
@@ -53,7 +54,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / "templates"
+            BASE_DIR / "templates",
         ],
         'APP_DIRS': True,
         'OPTIONS': {

@@ -9,12 +9,15 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="icon" href="{% static "img/bg_1.png" %}">
 
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
 	<link rel="stylesheet" type="text/css" href="{% static 'css/css.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 	<script type="text/javascript" src="{% static 'js/js.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 	<title>Pizzaria Dev</title>
 </head>
+<!--style="background-image:url({% static "img/bg_1.jpg" %})"-->
 <body>
 	{% bootstrap_css %}
 
@@ -24,7 +27,7 @@
                 <div class="inner">
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
                         <a href="" class="navbar-brand p-0">
-                            <h1 class="text-primary m-0"><i class="fa me-3"><img src="{% static "img/pizza.png" %}"></i>PizzariaDev</h1>
+                            <h1 class="text m-0"><i class="fa me-3"><img src="{% static "img/pizza.png" %}"></i>PizzariaDev</h1>
                             <!-- <img src="img/logo.png" alt="Logo"> -->
                         </a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -35,12 +38,18 @@
                                 <a href="index.html" class="nav-item nav-link active">Home</a>
                                 <a href="#" class="nav-item nav-link"><i class="fab">{% bs_icon 'cart' %}</i
                               > Carrinho</a>
-                                <a href="contact.html" class="nav-item nav-link">Contact</a>
+                                <a href="contact.html" class="nav-item nav-link"><i class="fab">{% bs_icon 'cart' %}</i
+                              >Contatos</a>
+                                <a href="#" class="nav-item nav-link" ><i >{% bs_icon 'cart' %}</i
+                              >Login</a>
+                                <a href="contact.html" class="nav-item nav-link"><i class="fab">{% bs_icon 'cart' %}</i
+                              >Cadastre-se</a>
                             </div>
                         </div>
                     </nav>
                 </div>
             </header>
+            
            	{% block content %}
 
            	{% endblock content %}

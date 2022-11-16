@@ -8,7 +8,6 @@ from .Carrinho import Carrinho
 from .Categoria import Categoria
 from .Produto import Produto
 from .ItemDeProduto import ItemDeProduto
-from .Profile import Profile
 from .Pedido import Pedido
 from .Venda import Venda
 from .Pagamento import Pagamento
